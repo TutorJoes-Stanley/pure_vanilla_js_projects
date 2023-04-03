@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+:root{
+  --bgcolor:#ff9998;
+  --clock-frame: #545271;
+  --clock-bg: #fefefc;
+  --shadow: #181818;
+  --text-color:#4d4b63;
+  --sec:#ff5e5e;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  background: var(--bgcolor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.clock{
+  width: 60vh;
+  height: 60vh;
+  background-color:var(--clock-frame);
+  border-radius: 50%;
+  box-shadow: 0 0 5px var(--shadow);
+  position: relative;
+}
+
+.clock-inner-bg{
+  width: 92%;
+  height: 92%; 
+  box-shadow: 0 0 3px var(--shadow);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock-inner-bg:nth-of-type(2){
+  width: 85%;
+  height: 85%;
+  box-shadow: none;
+  background-color: var(--clock-bg);
+}
+
+.clock-inner-bg:nth-of-type(2)::before{
+  content:'Ajanta';
+  color:var(--text-color);
+  position: absolute;
+  top:20%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 30px;
+}
+.clock-inner-bg:nth-of-type(2)::after{
+  content:'Tutor Joes';
+  color:var(--text-color);
+  position: absolute;  
+  bottom:20%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 15px;
+}
+
+.clock-center{
+  width: 20px;
+  height: 20px;
+  background-color:var(--text-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.needle{
+  --rotation:0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+}
+
+.hrs{
+  background:var(--text-color);
+  width: 8px;
+  height: 25%;
+}
+.min{
+  background:var(--text-color);
+  width: 6px;
+  height: 40%;
+}
+.sec{
+  background-color: var(--sec);
+  width: 3px;
+  height: 40%;
+
+}
+.sec::after{
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 50px;
+  background-color: var(--sec);
+  bottom: -30px;
+}
+.clock-mark {
+  width: 5px;
+  height: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin:bottom;
+}
+.clock-mark::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  transform: translateX(-50%);
+  font-size: 35px;
+  font-weight: 500;
+  color:var(--text-color);
+}
+
+.clock-mark::after {
+  content: "";
+  width: 2.5px;
+  height: 2.5px;
+  border-radius: 50%;
+  background-color:var(--text-color);
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
+.clock-mark:nth-child(1) { transform:rotate(0deg); }
+.clock-mark:nth-child(2) { transform:rotate(6deg); }
+.clock-mark:nth-child(3) { transform:rotate(12deg); }
+.clock-mark:nth-child(4) { transform:rotate(18deg); }
+.clock-mark:nth-child(5) { transform:rotate(24deg); }
+.clock-mark:nth-child(6) { transform:rotate(30deg); }
+.clock-mark:nth-child(7) { transform:rotate(36deg); }
+.clock-mark:nth-child(8) { transform:rotate(42deg); }
+.clock-mark:nth-child(9) { transform:rotate(48deg); }
+.clock-mark:nth-child(10) { transform:rotate(54deg); }
+.clock-mark:nth-child(11) { transform:rotate(60deg); }
+.clock-mark:nth-child(12) { transform:rotate(66deg); }
+.clock-mark:nth-child(13) { transform:rotate(72deg); }
+.clock-mark:nth-child(14) { transform:rotate(78deg); }
+.clock-mark:nth-child(15) { transform:rotate(84deg); }
+.clock-mark:nth-child(16) { transform:rotate(90deg); }
+.clock-mark:nth-child(17) { transform:rotate(96deg); }
+.clock-mark:nth-child(18) { transform:rotate(102deg); }
+.clock-mark:nth-child(19) { transform:rotate(108deg); }
+.clock-mark:nth-child(20) { transform:rotate(114deg); }
+.clock-mark:nth-child(21) { transform:rotate(120deg); }
+.clock-mark:nth-child(22) { transform:rotate(126deg); }
+.clock-mark:nth-child(23) { transform:rotate(132deg); }
+.clock-mark:nth-child(24) { transform:rotate(138deg); }
+.clock-mark:nth-child(25) { transform:rotate(144deg); }
+.clock-mark:nth-child(26) { transform:rotate(150deg); }
+.clock-mark:nth-child(27) { transform:rotate(156deg); }
+.clock-mark:nth-child(28) { transform:rotate(162deg); }
+.clock-mark:nth-child(29) { transform:rotate(168deg); }
+.clock-mark:nth-child(30) { transform:rotate(174deg); }
+.clock-mark:nth-child(31) { transform:rotate(180deg); }
+.clock-mark:nth-child(32) { transform:rotate(186deg); }
+.clock-mark:nth-child(33) { transform:rotate(192deg); }
+.clock-mark:nth-child(34) { transform:rotate(198deg); }
+.clock-mark:nth-child(35) { transform:rotate(204deg); }
+.clock-mark:nth-child(36) { transform:rotate(210deg); }
+.clock-mark:nth-child(37) { transform:rotate(216deg); }
+.clock-mark:nth-child(38) { transform:rotate(222deg); }
+.clock-mark:nth-child(39) { transform:rotate(228deg); }
+.clock-mark:nth-child(40) { transform:rotate(234deg); }
+.clock-mark:nth-child(41) { transform:rotate(240deg); }
+.clock-mark:nth-child(42) { transform:rotate(246deg); }
+.clock-mark:nth-child(43) { transform:rotate(252deg); }
+.clock-mark:nth-child(44) { transform:rotate(258deg); }
+.clock-mark:nth-child(45) { transform:rotate(264deg); }
+.clock-mark:nth-child(46) { transform:rotate(270deg); }
+.clock-mark:nth-child(47) { transform:rotate(276deg); }
+.clock-mark:nth-child(48) { transform:rotate(282deg); }
+.clock-mark:nth-child(49) { transform:rotate(288deg); }
+.clock-mark:nth-child(50) { transform:rotate(294deg); }
+.clock-mark:nth-child(51) { transform:rotate(300deg); }
+.clock-mark:nth-child(52) { transform:rotate(306deg); }
+.clock-mark:nth-child(53) { transform:rotate(312deg); }
+.clock-mark:nth-child(54) { transform:rotate(318deg); }
+.clock-mark:nth-child(55) { transform:rotate(324deg); }
+.clock-mark:nth-child(56) { transform:rotate(330deg); }
+.clock-mark:nth-child(57) { transform:rotate(336deg); }
+.clock-mark:nth-child(58) { transform:rotate(342deg); }
+.clock-mark:nth-child(59) { transform:rotate(348deg); }
+.clock-mark:nth-child(60) { transform:rotate(354deg); }
+
+.clock-mark:nth-child(1)::before {
+  content: "12";
+  transform: translate(-50%, -50%) rotate(-0deg);
+}
+
+.clock-mark:nth-child(6)::before {
+  content: "1";
+  transform: translate(-50%, -50%) rotate(-30deg);
+}
+
+.clock-mark:nth-child(11)::before {
+  content: "2";
+  transform: translate(-50%, -50%) rotate(-60deg);
+}
+
+
+.clock-mark:nth-child(16)::before {
+  content: "3";
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+.clock-mark:nth-child(21)::before {
+  content: "4";
+  transform: translate(-50%, -50%) rotate(-120deg);
+}
+
+.clock-mark:nth-child(26)::before {
+  content: "5";
+  transform: translate(-50%, -50%) rotate(-150deg);
+}
+
+.clock-mark:nth-child(31)::before {
+  content: "6";
+  transform: translate(-50%, -50%) rotate(-180deg);
+}
+
+.clock-mark:nth-child(36)::before {
+  content: "7";
+  transform: translate(-50%, -50%) rotate(-210deg);
+}
+
+.clock-mark:nth-child(41)::before {
+  content: "8";
+  transform: translate(-50%, -50%) rotate(-240deg);
+}
+
+.clock-mark:nth-child(46)::before {
+  content: "9";
+  transform: translate(-50%, -50%) rotate(-270deg);
+}
+
+.clock-mark:nth-child(51)::before {
+  content: "10";
+  transform: translate(-50%, -50%) rotate(-300deg);
+}
+
+.clock-mark:nth-child(56)::before {
+  content: "11";
+  transform: translate(-50%, -50%) rotate(-330deg);
+}
+
+
+.clock-mark:nth-child(5n+1)::after{
+  width: 5px;
+  height: 5px;
+  background-color: var(--sec);
+}

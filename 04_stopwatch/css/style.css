@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+@font-face {
+  font-family: digital-7;
+  src: url('digital-7.ttf');
+}
+
+body{
+  background-color: #dcdde1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+.clock{
+  background-color: #333;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  box-shadow:  inset 
+  0 -2px 0 0 rgba(0,0,0,.8),
+  1px 1px 0 0 rgba(0,0,0,.8),
+  2px 2px 0 0 rgba(0,0,0,.8),
+  3px 3px 0 0 rgba(0,0,0,.8),
+  4px 4px 0 0 rgba(0,0,0,.8),
+  5px 5px 0 0 rgba(0,0,0,.8),
+  6px 6px 0 0 rgba(0,0,0,.8),
+  7px 7px 0 0 rgba(0,0,0,.8),
+  8px 8px 0 0 rgba(0,0,0,.8),
+  9px 9px 0 0 rgba(0,0,0,.8),
+  10px 10px 0 0 rgba(0,0,0,.8),
+  11px 11px 0 0 rgba(0,0,0,.8),
+  12px 12px 0 0 rgba(0,0,0,.8),
+  13px 13px 0 0 rgba(0,0,0,.8),
+  14px 14px 0 0 rgba(0,0,0,.8),
+  15px 15px 0 0 rgba(0,0,0,.8),
+  16px 16px 0 0 rgba(0,0,0,.8),
+  17px 17px 0 0 rgba(0,0,0,.8),
+  18px 18px 0 0 rgba(0,0,0,.8),
+  19px 19px 0 0 rgba(0,0,0,.8),
+  20px 20px 0 0 rgba(0,0,0,.8);
+  position: relative;
+}
+
+.frame{
+  background-color: #2f3640;
+  width:380px;
+  height:380px;
+  border-radius: 50%;
+  border: 1px solid #7f8fa6;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 1;
+}
+
+.brand{
+  font-size: 35px;
+  color:#bdc3c7;
+  font-weight:500;
+  position: absolute;
+  top: 50px;
+  left: 48%;
+  transform: translateX(-48%);
+  z-index: 4;
+}
+.slogn{
+  font-size: 13px;
+  font-weight:500;
+  color:#95a5a6;
+  position: absolute;
+  top: 95px;
+  left: 48%;
+  transform: translateX(-48%);
+  z-index: 4;
+}
+.display{
+  color:white;
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2f3640;
+  width: 80%;
+  height: 80px;
+  position: absolute;
+  z-index: 10;
+  top:150px;
+  left: 40px;
+  border-radius: 50px;
+}
+.display div{
+  font-family: digital-7;
+}
+
+
+.hrs,
+.min,
+.sec,
+.ms{
+width: 30px;
+text-align: center;
+}
+
+
+.colon{
+  opacity: 0.2;
+}
+.clock.start-animation .colon{
+  animation: blink 0.5s ease infinite;
+}
+
+@keyframes blink {
+  from{
+    opacity: 0.2;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.buttons{
+  position: absolute;
+  z-index: 3;
+  bottom: 20px;
+  left: 20px;
+  background-color: #7f8fa6;
+  height: 200px;
+  width: 90%;
+  border-radius: 0 0 180px 180px ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons p{
+  text-transform: uppercase;
+  color:#2f3640;
+  font-size:12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: white;
+  margin-top: 20px; padding-left: 10px;
+}
+.group{
+  margin-top: 30px;
+}
+
+.buttons p span{
+  background-color: #2f3640;
+  color:white;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: inline-block;
+}
+
+
+.start{
+  background-color: #44bd32;
+}
+.stop{
+  background-color: #EA2027;
+}
+.reset{
+  background-color: #8e44ad;
+}
+
+button{
+  outline:0; 
+  border:none;
+  font-size: 18px;
+  color:#fff;
+  width: 90px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow:inset 0 -2px 0 0 rgba(0,0,0,.2),
+  1px 1px 0 0 rgba(0,0,0,.2),
+  2px 2px 0 0 rgba(0,0,0,.2);
+  transition:all .3s ease-out; 
+}
+
+button:active{
+  color:rgb(228, 227, 227);
+  box-shadow:inset 0 -4px 0 0 rgba(0,0,0,.2),
+  1px 1px 0 0 rgba(0,0,0,.2),
+  2px 2px 0 0 rgba(0,0,0,.2),
+  3px 3px 0 0 rgba(0,0,0,.2),
+  4px 4px 0 0 rgba(0,0,0,.2);
+}
+
+.start-active,
+.stop-active{
+  pointer-events: none;
+  opacity: 0.5;
+}

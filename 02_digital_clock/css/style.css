@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+
+@font-face {
+  font-family: 'DS-DIGI';
+  src: url('DS-DIGI.TTF');
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  user-select: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  color:white;
+}
+
+.days,
+.month
+{
+  width: 600px;
+  height: 50px;
+  color:rgba(113, 128, 147,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.days span,
+.month span
+{
+  font-size: 12px;
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.day-active{
+  color:rgba(255, 195, 18,1.0) !important;
+}
+
+.clock{
+  width: 600px;
+  height: 100px;
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'DS-DIGI';
+  color:rgba(76, 209, 55,1.0);
+}
+
+.num{
+  width: 50px;
+  height: 100px;
+  position: relative;
+  text-align: right;
+}
+
+.num::before{
+  content: '0';
+  position: absolute;
+  top: 0;
+  right: 0px;
+  color:rgba(113, 128, 147,0.1);
+}
+.colon{
+  width: 50px;
+  height: 100px;
+  text-align: center;
+  animation: blink 0.7s ease infinite;
+}
+
+
+@keyframes blink {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+
+.meridian span{
+  display: block;
+  font-size: 25px;
+  width: 30px;
+  text-align: center;
+  color:rgba(113, 128, 147,0.1);
+}
+
+.meridian span:nth-child(2){
+  margin-top: 10px;
+}
+.active{
+  color:rgba(76, 209, 55,1.0) !important;
+}
+
+.date{
+  color:rgba(234, 32, 39,1.0);
+  font-family: 'DS-DIGI';
+  font-size:40px;
+  font-weight: bold;
+}
